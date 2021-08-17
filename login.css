@@ -11,7 +11,7 @@
 .login-wrapper
 {
     width: 450px;
-    background-color: rgb(255, 200, 128);
+    background-color: #cfd0d8;
     padding: 1px 40px 20px;
     /* text-align: center; */
     font-family: sans-serif;
@@ -26,7 +26,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgb(255, 93, 34);
+    background-color: #0F044C;
     color: white;
 }
 .login-title h2
@@ -52,7 +52,7 @@
     width: 100%;
     padding: 10px 15px;
     border:none;
-    border-bottom: rgb(255, 93, 34) 4px solid;
+    border-bottom: #0F044C 4px solid;
 }
 .login-form .text-input
 {
@@ -70,7 +70,7 @@
     font-size: 18px;
     padding: 10px 20px;
     border:none;
-    background-color: rgb(255, 93, 34);
+    background-color: #0F044C;
     color: white;
 }
 .login-buttons button:hover

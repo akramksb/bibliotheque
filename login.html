@@ -4,30 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="login.css" rel="stylesheet">
+    <link href="login page.css" rel="stylesheet">
     <title>Login</title>
 </head>
 <body>
+    <!-- <img src="./icons8-book-60.png"/> -->
     <div class="login-wrapper">
         <div class="login-title">
-            <h2>login</h2>
+            <h2>Login</h2>
         </div>
-        <form class="login-form">
-            <div class="username text-input">
-                <label for="username"> nom d'utilisateur </label>
-                <input id="username" name="username" placeholder="nom d'utilisateur" required>
-            </div>
-            <div class="password text-input">
-                <label for="password"> mot de passe </label>
-                <input id="password" type="password" name="password" placeholder="mot de passe" required>
-            </div>
-
-            <div class="login-buttons">
-                <button type="submit" class= "login">Login</button>
-                <button class= "sign-up">Sign-up</button>
-            </div>
-            <div class="clra"></div>
-        </form>
+        <div class="login-form">
+            <form>
+                <div class="username text-input">
+                    <label for="username"> Nom d'utilisateur </label>
+                    <input id="username" name="username" required>
+                </div>
+                <div class="password text-input">
+                    <label for="password"> Mot de passe </label>
+                    <input id="password" type="password" name="password" required>
+                </div>
+                <div class="role-select">
+                    <!-- <p> Se connecter en tant que </p> -->
+                    <input id="admin" type="radio" name="role" required>
+                    <label for="admin">Admin</label>
+                    <input id="student" type="radio" name="role" required>
+                    <label for="student">Etudiant</label>
+                </div>
+                <button type="submit" class= "login-btn">Login</button>
+            </form>
+        </div>
     </div>
     
 </body>
