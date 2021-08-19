@@ -17,13 +17,13 @@ body{
 }
 /* img
 {
-    width: 54px;
+    width: 50px;
     margin-bottom: 26px;
     display: block;
     margin: auto;
     width: 45px;
     margin-bottom: 40px;
-    margin-top: 150px;
+    margin-top: 90px;
 } */
 .login-form
 {
@@ -99,7 +99,7 @@ body{
 }
 .role-select input:checked + label 
 {
-    background-color: #5c6bd4;
+    background-color: #3550ff;
 }
 .role-select label:hover
 {

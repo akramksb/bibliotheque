@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="login page.css" rel="stylesheet">
+    <link href="./stylesheets/login page.css" rel="stylesheet">
     <title>Login</title>
 </head>
 <body>
-    <!-- <img src="./icons8-book-60.png"/> -->
+    <!-- <img src="./Assets0/icons8-book-60.png"/> -->
     <div class="login-wrapper">
         <div class="login-title">
             <h2>Login</h2>
@@ -25,10 +25,10 @@
                 </div>
                 <div class="role-select">
                     <!-- <p> Se connecter en tant que </p> -->
+                    <input id="student" type="radio" name="role" required checked>
+                    <label for="student">Etudiant</label>
                     <input id="admin" type="radio" name="role" required>
                     <label for="admin">Admin</label>
-                    <input id="student" type="radio" name="role" required>
-                    <label for="student">Etudiant</label>
                 </div>
                 <button type="submit" class= "login-btn">Login</button>
             </form>
