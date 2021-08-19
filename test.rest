@@ -1,0 +1,19 @@
+GET http://localhost:3000/users
+
+
+###
+
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+    "username": "akram",
+    "cne": "F1223f4",
+    "password": "akram"
+}
+
+
+###
+GET http://localhost:3000/login
+
+
