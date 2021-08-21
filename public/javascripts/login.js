@@ -41,6 +41,7 @@ form.addEventListener('submit', async e =>{
                 },
                 body: JSON.stringify(data)
             });
+        // console.log(rawResponse)
         const content = await rawResponse.json();
         console.log(content);
     }

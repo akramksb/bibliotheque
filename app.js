@@ -16,10 +16,12 @@ app.use(cookieParser());
 // app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static('./public', {index: 'login.html'}));
 
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/login', loginRouter);
 
 app.listen(3000);
+console.log("app started at port 3000");
 
 module.exports = app;

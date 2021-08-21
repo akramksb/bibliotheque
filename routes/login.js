@@ -14,7 +14,7 @@ router.post('/', async (req, res, next) => {
         res.json("incorrect cne")
       if (body.password == student.password)
       {
-        res.json("logged-in")
+        res.json(`logged-in as ${student.username}`)
         return
       }
       res.json("incorrect password")
