@@ -33,7 +33,7 @@ form.addEventListener('submit', async e =>{
             password: form.password.value,
             role : form.role.value
         }
-        const rawResponse = await fetch('http://localhost:3000/login', {
+        const rawResponse = await fetch('/login', {
                 method: 'POST',
                 headers: {
                 'Accept': 'application/json',
@@ -41,9 +41,12 @@ form.addEventListener('submit', async e =>{
                 },
                 body: JSON.stringify(data)
             });
-        // console.log(rawResponse)
+        
+        //redirect user
         const content = await rawResponse.json();
-        console.log(content);
+        if (content)
+            location.assign('/users')
+
     }
 })
 

@@ -1,9 +1,11 @@
-var express = require('express');
-var router = express.Router();
-var {etudiant} = require('../models');
+const express = require('express');
+const controllers = require('../controllers/auth')
+const {etudiant} = require('../models');
+
+const router = express.Router();
 
 /* GET users listing. */
-router.get('/', async (req, res, next) => {
+router.get('/', controllers.authenticateToken , async (req, res, next) => {
   let allStudents = await etudiant.findAll();
   res.send(allStudents)
   console.log("request sent")
@@ -21,5 +23,6 @@ router.post('/', async (req, res, next) => {
     res.send(err.errors)
   }
 });
+
 
 module.exports = router;
