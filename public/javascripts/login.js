@@ -44,12 +44,22 @@ form.addEventListener('submit', async e =>{
         
         //redirect user
         const content = await rawResponse.json();
-        if (content)
-            location.assign('/users')
+        console.log(content);
+        if (content.student)
+            location.assign('/student')
 
     }
 })
 
+async function redirect()
+{
+    const rawResponse = await fetch('/login');
+    const content = await rawResponse.json();
+    // console.log(content)
+    if (content.isLoggedIn)
+        location.assign('/student')
+}
+redirect()
 
 // post
 

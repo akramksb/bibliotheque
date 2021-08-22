@@ -5,12 +5,18 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   // res.redirect("/login.html");
   res.render('index', { title: 'Express' });
-
 });
 
 router.get('/reg', function(req, res, next) {
   // res.redirect("/login.html");
   res.redirect('./test.html');
 });
+
+var path = require('path');
+
+router.get('/student', (req, res)=>{
+  res.redirect("student.html")
+  // res.redirect('./test.html');
+})
 
 module.exports = router;

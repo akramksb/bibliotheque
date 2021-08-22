@@ -24,5 +24,10 @@ router.post('/', async (req, res, next) => {
   }
 });
 
+router.get('/current', controllers.authenticateToken , async (req, res, next) => {
+  let Student = await etudiant.findOne( { where : { "id" : req.user.id } } );
+  res.json(Student)
+});
+
 
 module.exports = router;
