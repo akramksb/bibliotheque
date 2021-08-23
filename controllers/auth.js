@@ -1,12 +1,26 @@
 const jwt = require('jsonwebtoken');
+const path = require('path');
+
 require('dotenv').config()
 
 function authenticateToken(req, res, next)
 {
     const token = req.cookies.jwt;
-    if (!token) return res.sendStatus(401);
+    if (!token) return res.status(401).json({});
     jwt.verify( token, process.env.JWT_SECRET_TOKEN, (err, user)=> {
-        if (err) return res.sendStatus(401);
+        if (err) return res.status(401).json({});
+        req.user = user;
+        next()
+    })
+}
+
+
+function requireAuth(req, res, next)
+{
+    const token = req.cookies.jwt;
+    if (!token) return res.redirect("/login")
+    jwt.verify( token, process.env.JWT_SECRET_TOKEN, (err, user)=> {
+        if (err) return res.redirect("/login");
         req.user = user;
         next()
     })
@@ -25,7 +39,21 @@ function isLoggedIn(req)
         return 1;
 }
 
+function sendFile(res, pageName)
+{
+    return res.sendFile( path.join( __dirname , `../public/${pageName}` ))
+}
+
+function logout(res)
+{
+    res.clearCookie("jwt");
+    res.redirect('/login')
+}
+
 module.exports = {
     authenticateToken,
-    isLoggedIn
+    isLoggedIn,
+    requireAuth,
+    sendFile,
+    logout
 }

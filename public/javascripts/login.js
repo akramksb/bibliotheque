@@ -28,7 +28,7 @@ form.addEventListener('submit', async e =>{
     e.preventDefault();
     if (form.role.value == 'student')
     {
-        data = {
+        let data = {
             cne : form.cne.value,
             password: form.password.value,
             role : form.role.value
@@ -44,20 +44,44 @@ form.addEventListener('submit', async e =>{
         
         //redirect user
         const content = await rawResponse.json();
-        console.log(content);
-        if (content.student)
+        if (content.id)
             location.assign('/student')
-
+    }
+    else if (form.role.value == 'admin')
+    {
+        let data = {
+            username : form.username.value,
+            password: form.password.value,
+            role : form.role.value
+        }
+        const rawResponse = await fetch('/login', {
+                method: 'POST',
+                headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
+        
+        //redirect user
+        const content = await rawResponse.json();
+        if (content.id)
+            location.assign('/admin')
     }
 })
 
+form.role.value = "student"
 async function redirect()
 {
-    const rawResponse = await fetch('/login');
-    const content = await rawResponse.json();
-    // console.log(content)
-    if (content.isLoggedIn)
+    const rawResponse = await fetch('/users/current');
+    const user = await rawResponse.json();
+    console.log(user)
+    console.log(user.role)
+
+    if (user.role == "student")
         location.assign('/student')
+    else if (user.role == "admin")
+        location.assign('/admin')
 }
 redirect()
 

@@ -1,14 +1,15 @@
 const express = require('express');
 const controllers = require('../controllers/auth')
-const {etudiant} = require('../models');
+const {etudiant, admin} = require('../models');
 
 const router = express.Router();
 
 /* GET users listing. */
 router.get('/', controllers.authenticateToken , async (req, res, next) => {
+  if (req.user.role !== "admin" )
+    res.sendStatus(401)
   let allStudents = await etudiant.findAll();
   res.send(allStudents)
-  console.log("request sent")
 });
 
 router.post('/', async (req, res, next) => {
@@ -25,8 +26,16 @@ router.post('/', async (req, res, next) => {
 });
 
 router.get('/current', controllers.authenticateToken , async (req, res, next) => {
-  let Student = await etudiant.findOne( { where : { "id" : req.user.id } } );
-  res.json(Student)
+  let user;
+  if ( req.user.role == "student" )
+    user = await etudiant.findOne( { where : { "id" : req.user.id } } );
+  if ( req.user.role == "admin" )
+    user = await admin.findOne( { where : { "id" : req.user.id } } );
+  
+  user.dataValues.role = req.user.role
+  delete user.dataValues.password
+  res.json( user );
+  // console.log(user)
 });
 
 
