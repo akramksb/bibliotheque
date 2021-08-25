@@ -6,9 +6,9 @@ require('dotenv').config()
 function authenticateToken(req, res, next)
 {
     const token = req.cookies.jwt;
-    if (!token) return res.status(401).json({});
+    if (!token) return res.json({});
     jwt.verify( token, process.env.JWT_SECRET_TOKEN, (err, user)=> {
-        if (err) return res.status(401).json({});
+        if (err) return res.json({});
         req.user = user;
         next()
     })

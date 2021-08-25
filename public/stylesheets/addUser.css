@@ -8,12 +8,51 @@ body{
     background-color: #EEEEEE;
 }
 
-.login-wrapper
+.nav-bar
 {
-    position: absolute;
-    top:40%;
+    /* background-color: #141E61; */
+    padding: 0px 50px;
+    padding-top: 20px;
+}
+.nav-bar ul
+{
+    list-style: none;
+    padding-left: 0;
+    display: inline-block;
+}
+.nav-bar li
+{
+    padding: 20px 20px;
+}
+.nav-bar li a
+{
+    color : #141E61;
+    font-weight: bold;
+    text-decoration: none;
+    text-shadow: 2px 1px 1px #10174a0f;
+}
+.nav-list li
+{
+    display: inline-block;
+}
+.profile-info
+{
+    float: right;
+}
+
+.clear
+{
+    clear: both;
+}
+
+
+.addUser-wrapper
+{
+    margin-top: 22px;
+    /* position: absolute;
+    top:50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%); */
 }
 /* img
 {
@@ -25,23 +64,30 @@ body{
     margin-bottom: 40px;
     margin-top: 90px;
 } */
-.login-form
+.addUser-form
 {
-    border: 1px solid #787A91;
+    width: 340px;
+    margin: auto;
     padding: 22px 20px;
     border-radius: 6px;
-    width: 340px;
+    border: 1px solid #787A91;
 }
-.login-title
+.addUser-title
 {
-    margin-bottom: 16px;
+    width: 340px;
+    margin: 0 auto 16px;
 }
-.login-title h2
+.addUser-title h2
 {
     text-align: center;
     font-weight: 100;
     font-size: 30px;
     color: #141E61;
+}
+
+form .role-select
+{
+    margin-bottom: 15px;
 }
 
 .text-input label
@@ -54,13 +100,15 @@ body{
     /* background-color: #787A91; */
     outline-color: #141E61;
     border: 1px solid #787A91;
-    margin-bottom: 15px;
     border-radius: 6px;
     padding: 6px 10px;
     width: 100%;
 }
+.text-input {
+    margin-bottom: 15px;
+}
 
-.login-btn
+.addUser-btn
 {
     background-color: #141E61;
     color: #EEEEEE;
@@ -72,7 +120,7 @@ body{
     font-size: 16px;
     cursor: pointer;
 }
-.login-btn:hover
+.addUser-btn:hover
 {
     background-color: #212c75;
 }
@@ -111,10 +159,12 @@ body{
     margin-bottom: 5px;
 }
 
-.error-login
+.error-addUser
 {
-    color: #df294c;
-    font-weight: bold;
-    margin-bottom: 10px;
     display: none;
+    color: #df294c;
+    font-size: 0.8em;
+    font-weight: bold;
+    margin-top: 5px;
+    padding-left: 0.1em;
 }

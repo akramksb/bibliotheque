@@ -14,7 +14,11 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   etudiant.init({
-    username: {
+    name: {
+      type :DataTypes.STRING,
+      allowNull: false
+    },
+    lastname: {
       type :DataTypes.STRING,
       allowNull: false
     },

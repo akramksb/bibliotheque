@@ -38,5 +38,23 @@ router.get('/current', controllers.authenticateToken , async (req, res, next) =>
   // console.log(user)
 });
 
+router.get("/students/:cne?", async (req, res) => {
+  let user = await etudiant.findOne( { where : { "cne" : req.params.cne } } );
+  if (!user)
+  {
+    res.json(null)
+  }
+  else
+    res.json(user.id)
+})
+
+router.get("/admins/:username?", async (req, res) => {
+  let user = await admin.findOne( { where : { "username" : req.params.username } } );
+  if (!user)
+  {
+    res.json(null)
+  }
+  res.json(user.id)
+})
 
 module.exports = router;

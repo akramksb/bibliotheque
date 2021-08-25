@@ -3,6 +3,7 @@ const loginBtn = document.querySelector("button.login-btn");
 const form = document.querySelector("form");
 const usernameInput = document.querySelector(".username");
 const roleSelect = document.querySelector(".role-select");
+const errorMessage = document.querySelector(".error-login")
 
 roleSelect.addEventListener('click', e => {
     if ( e.target.nodeName == 'INPUT')
@@ -46,6 +47,11 @@ form.addEventListener('submit', async e =>{
         const content = await rawResponse.json();
         if (content.id)
             location.assign('/student')
+        else
+        {
+            errorMessage.textContent = content;
+            errorMessage.style.display = "block"
+        }
     }
     else if (form.role.value == 'admin')
     {
@@ -67,6 +73,11 @@ form.addEventListener('submit', async e =>{
         const content = await rawResponse.json();
         if (content.id)
             location.assign('/admin')
+        else
+        {
+            errorMessage.textContent = content;
+            errorMessage.style.display = "block"
+        }
     }
 })
 
@@ -75,8 +86,6 @@ async function redirect()
 {
     const rawResponse = await fetch('/users/current');
     const user = await rawResponse.json();
-    console.log(user)
-    console.log(user.role)
 
     if (user.role == "student")
         location.assign('/student')
