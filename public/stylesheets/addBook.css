@@ -1,0 +1,236 @@
+*
+{
+    box-sizing: border-box;
+    font-family:sans-serif;
+    margin: 0;
+}
+body{
+    background-color: #EEEEEE;
+}
+
+.nav-bar
+{
+    /* background-color: #141E61; */
+    padding: 0px 50px;
+    padding-top: 20px;
+}
+.nav-bar ul
+{
+    list-style: none;
+    padding-left: 0;
+    display: inline-block;
+}
+.nav-bar li
+{
+    padding: 20px 20px;
+}
+.nav-bar li a
+{
+    color : #141E61;
+    font-weight: bold;
+    text-decoration: none;
+    text-shadow: 2px 1px 1px #10174a0f;
+}
+.nav-list li
+{
+    display: inline-block;
+}
+
+.profile-info
+{
+    float: right;
+}
+
+.clear
+{
+    clear: both;
+}
+
+
+
+.addUser-wrapper
+{
+    max-width: 500px;
+    width: 100%;
+    margin: 43px auto;
+    /* position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%); */
+}
+/* img
+{
+    width: 50px;
+    margin-bottom: 26px;
+    display: block;
+    margin: auto;
+    width: 45px;
+    margin-bottom: 40px;
+    margin-top: 90px;
+} */
+.addUser-form
+{
+    width: 100%;
+    margin: auto;
+    padding: 22px 20px;
+    border-radius: 6px;
+    border: 1px solid #787A91;
+}
+.addUser-title
+{
+    width: 100%;
+    margin: 0 auto 16px;
+}
+.addUser-title h2
+{
+    text-align: center;
+    font-weight: 100;
+    font-size: 30px;
+    color: #141E61;
+}
+
+
+.image-select
+{
+    display: inline-block;
+    width: 135px;
+    height: 150px;
+    margin-bottom: 15px;
+    border: 2px dashed gray;
+    border-radius: 4px;
+    position: relative;
+}
+.image-select input {
+    opacity: 0; 
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+.rectangle
+{
+    width: 23px;
+    height: 5px;
+    background-color: gray;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+}
+.rectangle.rec-1
+{
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+.rectangle.rec-2
+{
+    transform: translate(-50%, -50%);
+}
+.image-placeholder-text
+{
+    text-align: center;
+    margin: auto;
+    color: gray;
+    position: absolute;
+    bottom: 19%;
+}
+
+
+
+.flex-container
+{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0 25px;
+}
+.flex-container .inputs-group
+{
+    /* flex item */
+    flex-grow: 1;
+    flex-basis: 250px;
+    /* flex container */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+
+.text-input label
+{
+    display: block;
+    margin-bottom: 7px;
+}
+.text-input input
+{
+    /* background-color: #787A91; */
+    outline-color: #141E61;
+    border: 1px solid #787A91;
+    border-radius: 6px;
+    padding: 6px 10px;
+    width: 100%;
+}
+.text-input {
+    margin-bottom: 15px;
+}
+
+
+.addUser-btn
+{
+    background-color: #141E61;
+    color: #EEEEEE;
+    width: 100%;
+    padding: 7.5px 10px;
+    border:none;
+    border-radius: 6px;
+    margin-top: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.addUser-btn:hover
+{
+    background-color: #212c75;
+}
+
+
+.role-select p
+{
+    margin-bottom: 7px;
+    display: inline-block;
+}
+.role-select input
+{
+    display: none;
+}
+.role-select label
+{
+    background-color: #989aad;
+    color: #EEEEEE;
+    text-align: center;
+    padding: 7px 10px;
+    border-radius: 6px;
+    width: 49%;
+    cursor: pointer;
+}
+.role-select input:checked + label 
+{
+    background-color: #3550ff;
+}
+.role-select label:hover
+{
+    background-color: #a1a3b4;
+}
+.role-select
+{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.error-addUser
+{
+    display: none;
+    color: #df294c;
+    font-size: 0.8em;
+    font-weight: bold;
+    margin-top: 5px;
+    padding-left: 0.1em;
+}

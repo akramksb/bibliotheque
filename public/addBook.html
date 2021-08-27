@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./stylesheets/addBook.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="nav-bar">
+        <ul class="menu nav-list">
+            <li><a href="">Browse</a></li>
+            <li><a href="">Add book</a></li>
+            <li><a href="/addUser">Add User</a></li>
+            
+        </ul>
+        <ul class="profile-info nav-list">
+            <li><a href="/logout">Logout</a></li>
+            <li><a href="" id="username-nav"></a></li>
+            
+        </ul>
+        <div class="clear"></div>
+    </div>
+    
+    <div class="addUser-wrapper">
+        <div class="addUser-title">
+            <h2>Ajouter un livre</h2>
+        </div>
+        <div class="addUser-form">
+            <form action="/addUser" method="POST">
+                
+                <div class="flex-container">
+
+                    <div class="image-select">
+                        <div class="rectangle rec-1"></div>
+                        <div class="rectangle rec-2"></div>
+                        <input type="file" accept="image/*">
+                        <h4 class="image-placeholder-text">ajouter une image</h4>
+                    </div>
+
+                    <div class="inputs-group">
+                        <div class="isbn text-input">
+                            <label for="isbn"> ISBN </label>
+                            <input id="isbn" name="isbn" required>
+                        </div>
+
+                        <div class="quantite text-input">
+                            <label for="quantite"> Quantite </label>
+                            <input id="quantite" type="number" min=0 name="quantite" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="titre text-input">
+                    <label for="titre"> Titre </label>
+                    <input id="titre" name="titre" required>
+
+                    <div class="error-addUser error-cne"></div>
+                </div>
+                
+
+                <button type="submit" class= "addUser-btn">Add Book</button>
+
+
+            </form>
+        </div>
+    </div>
+    
+    <script src="./javascripts/admin.js"></script>
+    <script src="./javascripts/addUser.js"></script>
+</body>
+</html>

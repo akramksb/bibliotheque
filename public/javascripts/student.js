@@ -4,7 +4,9 @@ const usernameText = document.querySelector('#username')
 async function getUserInfo()
 {
     const response = await fetch("/users/current")
-    const data = await response.json()
-    usernameText.textContent = data.username
+    const user = await response.json()
+    user.name = `${user.name[0].toUpperCase()}${user.name.slice(1).toLowerCase()}`
+    let fullname = `${user.lastname.toUpperCase()} ${user.name}`
+    usernameText.textContent = fullname
 } 
 getUserInfo()
