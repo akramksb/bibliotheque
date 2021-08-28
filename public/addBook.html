@@ -11,7 +11,7 @@
     <div class="nav-bar">
         <ul class="menu nav-list">
             <li><a href="">Browse</a></li>
-            <li><a href="">Add book</a></li>
+            <li><a href="/addBook">Add book</a></li>
             <li><a href="/addUser">Add User</a></li>
             
         </ul>
@@ -23,20 +23,27 @@
         <div class="clear"></div>
     </div>
     
-    <div class="addUser-wrapper">
-        <div class="addUser-title">
+    <div class="addBook-wrapper">
+        <div class="addBook-title">
             <h2>Ajouter un livre</h2>
         </div>
-        <div class="addUser-form">
-            <form action="/addUser" method="POST">
+        <div class="addBook-form">
+            <form action="/addBook" method="POST">
                 
                 <div class="flex-container">
 
                     <div class="image-select">
-                        <div class="rectangle rec-1"></div>
-                        <div class="rectangle rec-2"></div>
+                        <div class="to-hide">
+                            <h4 class="image-placeholder-text">ajouter une image</h4>
+                            <div class="rectangle rec-1 "></div>
+                            <div class="rectangle rec-2 "></div>
+                        </div>
+                        <div class="to-show flex-smallbtn-container">
+                            <button class="green">select</button>
+                            <button>remove</button>
+                        </div>
+                        <!-- <img alt="your image" class="preview-upload"> -->
                         <input type="file" accept="image/*">
-                        <h4 class="image-placeholder-text">ajouter une image</h4>
                     </div>
 
                     <div class="inputs-group">
@@ -56,11 +63,11 @@
                     <label for="titre"> Titre </label>
                     <input id="titre" name="titre" required>
 
-                    <div class="error-addUser error-cne"></div>
+                    <div class="error-addBook error-cne"></div>
                 </div>
                 
 
-                <button type="submit" class= "addUser-btn">Add Book</button>
+                <button type="submit" class= "addBook-btn">Add Book</button>
 
 
             </form>
@@ -68,6 +75,6 @@
     </div>
     
     <script src="./javascripts/admin.js"></script>
-    <script src="./javascripts/addUser.js"></script>
+    <script src="./javascripts/addBook.js"></script>
 </body>
 </html>

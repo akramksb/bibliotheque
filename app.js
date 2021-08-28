@@ -21,6 +21,8 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/login', loginRouter);
 app.use('/addUser', require('./routes/addUser'));
+app.use('/addBook', require('./routes/addBook'));
+
 
 app.listen(3000);
 console.log("app started at port 3000");
