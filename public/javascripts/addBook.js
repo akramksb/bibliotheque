@@ -6,31 +6,40 @@ const passwordMessage = document.querySelector(".error-password")
 const cneMessage = document.querySelector(".error-cne")
 
 const imgInput = document.querySelector(".image-select input")
-const imgPreview = document.querySelector(".preview-upload")
+// const imgPreview = document.querySelector(".preview-upload")
 const imgSelect = document.querySelector(".image-select")
 const imgHide = document.querySelector(".image-select .to-hide")
 const imgShow = document.querySelector(".image-select .to-show")
+const reselectImg = document.querySelector(".reselect-img")
+const removeImg = document.querySelector(".remove-img")
 
 
 imgInput.addEventListener("change", function () {
-    getImgData();
-  });
-
-function getImgData() {
     const files = imgInput.files[0];
     if (files) {
         const fileReader = new FileReader();
         fileReader.readAsDataURL(files);
         fileReader.addEventListener("load", function () {
-        // imgSelect.style.display = "block";
-        // imgSelect.innerHTML = '<img src="' + this.result + '" />';
         // imgPreview.src = this.result;
+        imgInput.style.display = "none"
         imgHide.style.display = "none";
         imgSelect.style.backgroundImage = `url(${this.result})`
         imgShow.style.display = "flex"
         });    
     }
-}
+});
+reselectImg.addEventListener('click', e=>{
+    imgInput.click();
+});
+removeImg.addEventListener('click', e=>{
+    imgInput.style.display = "block"
+    imgHide.style.display = "block";
+    imgSelect.style.backgroundImage = ""
+    imgShow.style.display = "none"
+});
+
+
+
 
 
 form.addEventListener('submit', async e =>{
