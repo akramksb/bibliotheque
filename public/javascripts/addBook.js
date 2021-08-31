@@ -33,6 +33,7 @@ reselectImg.addEventListener('click', e => {
 });
 removeImg.addEventListener('click', e => {
     imgInput.style.display = "block"
+    imgInput.value = ""
     imgHide.style.display = "block";
     imgSelect.style.backgroundImage = ""
     imgShow.style.display = "none"
