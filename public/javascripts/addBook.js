@@ -47,8 +47,9 @@ form.addEventListener('submit', async e => {
     const data = new FormData();
     let jsonData = {
         isbn: form.isbn.value,
-        quantite: form.quantite.value,
-        titre: form.titre.value
+        qte: form.quantite.value,
+        title: form.titre.value,
+        image : null
     }
     jsonData = JSON.stringify(jsonData)
     // json data will bee sent as file
@@ -64,23 +65,20 @@ form.addEventListener('submit', async e => {
     });
 
     const content = await rawResponse.json();
-    console.log(content);
 
-    // let opacity = 65;
-    // let rgbValues = "220, 20, 60"
-    // if (content.id)
-    //     rgbValues = "48,212,66"
+    let opacity = 65;
+    let rgbValues = "220, 20, 60"
+    if (content.id)
+        rgbValues = "48,212,66"
 
-    // let opChange = setInterval( ()=>{
-    //     opacity--;
-    //     form.parentElement.style.backgroundColor = `rgba(${rgbValues},${opacity}%)`
-    //     if (opacity == 0)
-    //         clearInterval(opChange)
-    // }, 1 )
-    // form.name.value = "";
-    // form.lastname.value = "";
-    // form.password.value = "";
-    // form.passwordRepet.value = "";
-    // try { form.cne.value = ""; } 
-    // catch { form.username.value = ""; }
+    let opChange = setInterval( ()=>{
+        opacity--;
+        form.parentElement.style.backgroundColor = `rgba(${rgbValues},${opacity}%)`
+        if (opacity == 0)
+            clearInterval(opChange)
+    }, 1 )
+    form.isbn.value = "";
+    form.quantite.value = "";
+    form.titre.value = "";
+    removeImg.click()
 })
