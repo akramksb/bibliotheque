@@ -1,9 +1,7 @@
 const express = require('express');
-const jwt = require('jsonwebtoken');
 const path = require('path');
 // var cookieParser = require('cookie-parser');
 const router = express.Router();
-const {etudiant, admin} = require('../models');
 const controllers = require('../controllers/auth')
 require('dotenv').config()
 
