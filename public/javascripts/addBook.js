@@ -20,18 +20,18 @@ imgInput.addEventListener("change", function () {
         const fileReader = new FileReader();
         fileReader.readAsDataURL(files);
         fileReader.addEventListener("load", function () {
-        // imgPreview.src = this.result;
-        imgInput.style.display = "none"
-        imgHide.style.display = "none";
-        imgSelect.style.backgroundImage = `url(${this.result})`
-        imgShow.style.display = "flex"
-        });    
+            // imgPreview.src = this.result;
+            imgInput.style.display = "none"
+            imgHide.style.display = "none";
+            imgSelect.style.backgroundImage = `url(${this.result})`
+            imgShow.style.display = "flex"
+        });
     }
 });
-reselectImg.addEventListener('click', e=>{
+reselectImg.addEventListener('click', e => {
     imgInput.click();
 });
-removeImg.addEventListener('click', e=>{
+removeImg.addEventListener('click', e => {
     imgInput.style.display = "block"
     imgHide.style.display = "block";
     imgSelect.style.backgroundImage = ""
@@ -42,88 +42,45 @@ removeImg.addEventListener('click', e=>{
 
 
 
-form.addEventListener('submit', async e =>{
+form.addEventListener('submit', async e => {
     e.preventDefault();
-    cneMessage.style.display = "none"
-    passwordMessage.style.display = "none"
-    let data = null;
-
-    if (form.role.value == 'student')
-    {
-        let userExist = await fetch(`/users/students/${form.cne.value}`);
-        let userExistContent = await userExist.json();
-        if (userExistContent)
-        {
-            cneMessage.textContent = "CNE existe deja"
-            cneMessage.style.display = "block"
-            return;
-        }
-        if ( form.password.value !== form.passwordRepet.value )
-        {
-            passwordMessage.textContent = "le mot de passe ne correspond pas"
-            passwordMessage.style.display = "block"
-            return;
-        }
-        data = {
-            name : form.name.value,
-            lastname : form.lastname.value,
-            cne : form.cne.value,
-            password: form.password.value,
-            role : form.role.value
-        }
-
+    const data = new FormData();
+    let jsonData = {
+        isbn: form.isbn.value,
+        quantite: form.quantite.value,
+        titre: form.titre.value
     }
-    else if (form.role.value == 'admin')
-    {
-        let userExist = await fetch(`/users/admins/${form.username.value}`);
-        let userExistContent = await userExist.json();
-        if (userExistContent)
-        {
-            cneMessage.textContent = "username existe deja"
-            cneMessage.style.display = "block"
-            return;
-        }
-        if ( form.password.value !== form.passwordRepet.value )
-        {
-            passwordMessage.textContent = "le mot de passe ne correspond pas"
-            passwordMessage.style.display = "block"
-            return;
-        }
-        data = {
-            name : form.name.value,
-            lastname : form.lastname.value,
-            username : form.username.value,
-            password: form.password.value,
-            role : form.role.value
-        }
-    }
+    jsonData = JSON.stringify(jsonData)
+    // json data will bee sent as file
+    const blob = new Blob([jsonData], {
+        type: 'application/json'
+    });
+    data.append("details", blob);
+    data.append('image', imgInput.files[0])
 
-    const rawResponse = await fetch('/addUser', {
+    const rawResponse = await fetch('/addBook', {
         method: 'POST',
-        headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
+        body: data
     });
 
     const content = await rawResponse.json();
+    console.log(content);
 
-    let opacity = 65;
-    let rgbValues = "220, 20, 60"
-    if (content.id)
-        rgbValues = "48,212,66"
-    
-    let opChange = setInterval( ()=>{
-        opacity--;
-        form.parentElement.style.backgroundColor = `rgba(${rgbValues},${opacity}%)`
-        if (opacity == 0)
-            clearInterval(opChange)
-    }, 1 )
-    form.name.value = "";
-    form.lastname.value = "";
-    form.password.value = "";
-    form.passwordRepet.value = "";
-    try { form.cne.value = ""; } 
-    catch { form.username.value = ""; }
+    // let opacity = 65;
+    // let rgbValues = "220, 20, 60"
+    // if (content.id)
+    //     rgbValues = "48,212,66"
+
+    // let opChange = setInterval( ()=>{
+    //     opacity--;
+    //     form.parentElement.style.backgroundColor = `rgba(${rgbValues},${opacity}%)`
+    //     if (opacity == 0)
+    //         clearInterval(opChange)
+    // }, 1 )
+    // form.name.value = "";
+    // form.lastname.value = "";
+    // form.password.value = "";
+    // form.passwordRepet.value = "";
+    // try { form.cne.value = ""; } 
+    // catch { form.username.value = ""; }
 })
