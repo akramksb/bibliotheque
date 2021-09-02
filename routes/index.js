@@ -25,8 +25,13 @@ router.get('/admin', controllers.requireAuth ,(req, res)=>{
   return controllers.sendFile(res, "admin.html")
 })
 
+router.get('/browse', controllers.requireAuth, async (req, res) => {
+  return controllers.sendFile(res, "browse.html");
+})
+
 router.get('/logout', controllers.requireAuth ,(req, res)=>{
   return controllers.logout(res)
 })
+
 
 module.exports = router;

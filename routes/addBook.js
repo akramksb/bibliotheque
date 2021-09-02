@@ -3,7 +3,8 @@ const path = require('path');
 // var cookieParser = require('cookie-parser');
 const router = express.Router();
 const { book } = require('../models');
-const controllers = require('../controllers/auth')
+const controllers = require('../controllers/auth');
+const { exception } = require('console');
 require('dotenv').config()
 
 /* GET users listing. */
@@ -30,9 +31,11 @@ router.post('/', controllers.requireAuth, async (req, res, next) => {
       uploadPath += data.image;
       req.files.image.mv(uploadPath, (err) => {
         if (err)
-          return res.status(500).send(err);
+          data.err = err;
       })
     }
+    if (data.err)
+      throw (data.err)
 
     let newBook = await book.create(data);
 
