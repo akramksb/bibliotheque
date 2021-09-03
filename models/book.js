@@ -24,7 +24,11 @@ module.exports = (sequelize, DataTypes) => {
       allowNull : false
     },
     image: DataTypes.STRING,
-    qte: {
+    qteStock: {
+      type :DataTypes.INTEGER,
+      allowNull : false
+    },
+    total: {
       type :DataTypes.INTEGER,
       allowNull : false
     }

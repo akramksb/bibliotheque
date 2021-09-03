@@ -1,5 +1,5 @@
 const body = document.querySelector("body")
-const booksTable = document.querySelector(".bookList table")
+const booksTableBody = document.querySelector(".bookList table tbody")
 
 const imagesPath = "Upload/BookCovers/";
 
@@ -13,6 +13,7 @@ async function showAllBooks()
         let td = document.createElement("td")
         let img = document.createElement("img")
         img.title = book.title;
+        img.alt = book.title
         if (book.image)
             img.src = imagesPath + book.image;
         td.appendChild(img)
@@ -23,10 +24,10 @@ async function showAllBooks()
         tr.appendChild(td)
 
         td = document.createElement("td")
-        td.textContent = book.qte
+        td.textContent = book.qteStock
         tr.appendChild(td)
 
-        booksTable.appendChild(tr);
+        booksTableBody.appendChild(tr);
     });
 }
 

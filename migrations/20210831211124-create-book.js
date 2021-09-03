@@ -20,8 +20,12 @@ module.exports = {
       image: {
         type: Sequelize.STRING
       },
-      qte: {
-        type: Sequelize.INTEGER,
+      qteStock: {
+        type :Sequelize.INTEGER,
+        allowNull : false
+      },
+      total: {
+        type :Sequelize.INTEGER,
         allowNull : false
       },
       createdAt: {

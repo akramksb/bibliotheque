@@ -1,4 +1,27 @@
+.bookList
+{
+    padding: 0 70px;
+}
+.bookList table
+{
+    width: 100%;
+    margin: 0 auto;
+    text-align: left;
+    border-collapse: collapse;
+}
+.bookList table th
+{
+    margin: 0 auto;
+    text-align: left;
+    background-color: #212c75;
+    color: white;
+    padding: 5px 10px ;
+}
+.bookList table td
+{
+    padding: 10px 0;
+}
 .bookList table img
 {
-    width: 100px;
+    height: 100px;
 }

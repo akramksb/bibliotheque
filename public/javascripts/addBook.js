@@ -48,7 +48,8 @@ form.addEventListener('submit', async e => {
     const data = new FormData();
     let jsonData = {
         isbn: form.isbn.value,
-        qte: form.quantite.value,
+        qteStock: form.quantite.value,
+        total: form.quantite.value,
         title: form.titre.value,
         image : null
     }
