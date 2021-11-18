@@ -1,0 +1,1 @@
+console.log('JWT_SECRET_TOKEN = ' + require('crypto').randomBytes(64).toString('hex'));
