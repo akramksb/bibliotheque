@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./stylesheets/login page.css" rel="stylesheet">
+    <title>Login</title>
+</head>
+<body>
+    <!-- <img src="./Assets0/icons8-book-60.png"/> -->
+    <div class="login-wrapper">
+        <div class="login-title">
+            <h2>Login</h2>
+        </div>
+        <div class="login-form">
+            <form action="/login" method="POST">
+                <div class="username cne text-input">
+                    <label for="cne"> CNE </label>
+                    <input id="cne" name="cne" required>
+                </div>
+                <div class="password text-input">
+                    <label for="password"> Mot de passe </label>
+                    <input id="password" type="password" name="password" required>
+                    <div class="error-login"></div>
+                </div>
+
+
+                <div class="role-select">
+                    <!-- <p> Se connecter en tant que </p> -->
+                    <input id="student" value="student" type="radio" name="role" required checked>
+                    <label for="student">Etudiant</label>
+                    <input id="admin" value="admin" type="radio" name="role" required>
+                    <label for="admin">Admin</label>
+                </div>
+                <button type="submit" class= "login-btn">Login</button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="./javascripts/login.js"></script>
+</body>
+</html>

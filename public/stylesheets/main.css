@@ -1,0 +1,44 @@
+*
+{
+    box-sizing: border-box;
+    font-family: sans-serif;
+    margin:0;
+}
+body{
+    background-color: rgb(226, 215, 199);
+}
+.navbar
+{
+    background-color: rgb(255, 93, 34);
+    color: white;
+    position: relative;
+}
+ul
+{
+    padding:0;
+    display: inline-block;
+}
+li
+{
+    display: inline-block;
+    padding: 15px 20px;
+    /* margin-right: 10px; */
+}
+li:hover
+{
+    cursor: pointer;
+    background-color: rgb(228, 81, 28);
+}
+.navbar .login{
+    position: absolute;
+    right: 10px;
+    top:0;
+}
+.navbar .login div{
+    display: inline-block;
+    padding: 15px;
+}
+.navbar .login div:hover
+{
+    cursor: pointer;
+}
