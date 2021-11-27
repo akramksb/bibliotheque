@@ -27,6 +27,8 @@ app.use('/users', usersRouter);
 app.use('/login', loginRouter);
 app.use('/addUser', require('./routes/addUser'));
 app.use('/addBook', require('./routes/addBook'));
+app.use('/addLoan', require('./routes/addLoan'));
+app.use('/myBooks', require('./routes/myBooks'));
 app.use('/books', require('./routes/books'));
 
 

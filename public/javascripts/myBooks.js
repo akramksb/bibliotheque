@@ -6,7 +6,7 @@ const imagesPath = "Upload/BookCovers/";
 
 async function showAllBooks()
 {
-    const rawResponse = await fetch('/books');
+    const rawResponse = await fetch('/myBooks/all');
     const books = await rawResponse.json();
 
     books.forEach(book => {

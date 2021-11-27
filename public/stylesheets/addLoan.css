@@ -1,0 +1,149 @@
+*
+{
+    box-sizing: border-box;
+    font-family:sans-serif;
+    margin: 0;
+}
+body{
+    background-color: #EEEEEE;
+}
+
+.nav-bar
+{
+    /* background-color: #141E61; */
+    padding: 0px 50px;
+    padding-top: 20px;
+}
+.nav-bar ul
+{
+    list-style: none;
+    padding-left: 0;
+    display: inline-block;
+}
+.nav-bar li
+{
+    padding: 20px 20px;
+}
+.nav-bar li a
+{
+    color : #141E61;
+    font-weight: bold;
+    text-decoration: none;
+    text-shadow: 2px 1px 1px #10174a0f;
+}
+.nav-list li
+{
+    display: inline-block;
+}
+
+.profile-info
+{
+    float: right;
+}
+
+.clear
+{
+    clear: both;
+}
+
+
+
+.addLoan-wrapper
+{
+    max-width: 500px;
+    width: 100%;
+    margin: 43px auto;
+    /* position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%); */
+}
+/* img
+{
+    width: 50px;
+    margin-bottom: 26px;
+    display: block;
+    margin: auto;
+    width: 45px;
+    margin-bottom: 40px;
+    margin-top: 90px;
+} */
+.addLoan-form
+{
+    width: 100%;
+    margin: auto;
+    padding: 22px 20px;
+    border-radius: 6px;
+    border: 1px solid #787A91;
+}
+.addLoan-title
+{
+    width: 100%;
+    margin: 0 auto 16px;
+}
+.addLoan-title h2
+{
+    text-align: center;
+    font-weight: 100;
+    font-size: 30px;
+    color: #141E61;
+}
+
+
+.flex-container
+{
+    display: flex;
+    justify-content: space-between;
+}
+.flex-container .text-input
+{
+    width: 49%;
+}
+
+
+.text-input label
+{
+    display: block;
+    margin-bottom: 7px;
+}
+.text-input input
+{
+    /* background-color: #787A91; */
+    outline-color: #141E61;
+    border: 1px solid #787A91;
+    border-radius: 6px;
+    padding: 6px 10px;
+    width: 100%;
+}
+.text-input {
+    margin-bottom: 15px;
+}
+
+
+.addLoan-btn
+{
+    background-color: #141E61;
+    color: #EEEEEE;
+    width: 100%;
+    padding: 7.5px 10px;
+    border:none;
+    border-radius: 6px;
+    margin-top: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.addLoan-btn:hover
+{
+    background-color: #212c75;
+}
+
+
+.error-addLoan
+{
+    display: none;
+    color: #df294c;
+    font-size: 0.8em;
+    font-weight: bold;
+    margin-top: 5px;
+    padding-left: 0.1em;
+}
