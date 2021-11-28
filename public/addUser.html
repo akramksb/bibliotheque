@@ -5,76 +5,133 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./stylesheets/addUser.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.8/dist/css/uikit.min.css"/>
+    <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+    crossorigin="anonymous"
+    />
     <title>Document</title>
 </head>
 <body>
-    <div class="nav-bar">
-        <ul class="menu nav-list">
-            <li><a href="">Browse</a></li>
-            <li><a href="/addBook">Add book</a></li>
-            <li><a href="/addUser">Add User</a></li>
-            
-        </ul>
-        <ul class="profile-info nav-list">
-            <li><a href="/logout">Logout</a></li>
-            <li><a href="" id="username-nav"></a></li>
-            
-        </ul>
-        <div class="clear"></div>
+    <div class="uk-background-cover" uk-height-viewport>
+        <img src="../upload/images/img-student-space.jpg" alt="" uk-cover />
+    <div class="uk-position-top">
+        <nav class="navbarTransparent" uk-navbar>
+          <div class="uk-navbar-center">
+            <ul class="uk-navbar-nav navText">
+              <li class="nav-item">
+                <a class="uk-text-emphasis navText uk-text-bold" href="/browse"
+                  >Browse</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="uk-text-emphasis navText uk-text-bold" href="/addBook">Add book</a>
+              </li>
+              <li class="nav-item">
+                <a class="uk-text-emphasis navText uk-text-bold" href="/addUser">Add User</a>
+              </li>
+            </ul>
+        </div>  
+        <div class="uk-navbar-right">
+            <ul class="profile-info uk-navbar-nav navText">
+                <li class="nav-item">
+                    <a class="uk-text-emphasis navText uk-text-bold" href="/logout">Logout</a>
+                </li>
+                <li class="nav-item">
+                    <a class="uk-text-emphasis navText uk-text-bold" href="" id="username-nav"></a>
+                </li>
+            </ul>
+        </div>
+        </nav>
     </div>
     
-    <div class="addUser-wrapper">
-        <div class="addUser-title">
-            <h2>Ajouter un utilisateur</h2>
-        </div>
-        <div class="addUser-form">
-            <form action="/addUser" method="POST">
-                <p class="role"> Role </p>
-                <div class="role-select">
-                    <!-- <p> Se connecter en tant que </p> -->
-                    <input id="student" value="student" type="radio" name="role" required checked>
-                    <label for="student">Etudiant</label>
-                    <input id="admin" value="admin" type="radio" name="role" required>
-                    <label for="admin">Admin</label>
-                </div>
-
-                <div class="flex-container">
-                    <div class="name text-input">
-                        <label for="name"> Name </label>
-                        <input id="name" name="name" required>
-                    </div>
-
-                    <div class="lastname text-input">
-                        <label for="lastname"> Last name </label>
-                        <input id="lastname" name="lastname" required>
-                    </div>
-                </div>
-
-                <div class="username cne text-input">
-                    <label for="cne"> CNE </label>
-                    <input id="cne" name="cne" required>
-
-                    <div class="error-addUser error-cne"></div>
-                </div>
-
-                <div class="password text-input">
-                    <label for="password"> Mot de passe </label>
-                    <input id="password" type="password" name="password" required>
-                </div>
-
-                <div class="passwordRepet text-input">
-                    <label for="passwordRepet"> Répéter le mot de passe </label>
-                    <input id="passwordRepet" type="password" name="passwordRepet" required>
-
-                    <div class="error-addUser error-password"></div>
-                </div>
-                
-                <button type="submit" class= "addUser-btn">Add User</button>
-            </form>
-        </div>
     </div>
+
+    <div
+			class="uk-grid-width-larg-1-1 signinBack uk-grid-width-small-2-3 uk-padding uk-position-center uk-margin-remove-left"
+			uk-grid
+		>
+			<form action="/addUser" method="POST" style="margin:auto;width:50%;" class="uk-padding-remove-left">
+				<fieldset class="uk-fieldset">
+					<legend class="uk-legend">Add user</legend>
+                    <p class="role"> Role </p>
+                    <div class="role-select">
+                        <!-- <p> Se connecter en tant que </p> -->
+                        <input id="student" value="student" type="radio" name="role" required checked>
+                        <label for="student">Etudiant</label>
+                        <input id="admin" value="admin" type="radio" name="role" required>
+                        <label for="admin">Admin</label>
+                    </div>
+					<div class="uk-margin-small uk-inline uk-width-larg">
+						<span class="uk-form-icon" uk-icon="icon: user"></span>
+						<input  
+                            id="name"  
+							name="name"
+							class="uk-input"
+							type="text"
+							placeholder="Name"
+                            required
+						/>
+					</div>
+					<div class="uk-margin-small uk-inline uk-width-larg">
+						<span class="uk-form-icon" uk-icon="icon: user"></span>
+						<input  
+                            id="lastname"   
+                            name="lastname" 
+							class="uk-input"
+							type="text"
+							placeholder="Last name"
+                            required
+						/>
+					</div>
+					<div class="uk-margin-small uk-inline uk-width-larg">
+						<span class="uk-form-icon" uk-icon="icon: user"></span>
+						<input 
+                            id="cne" 
+                            name="cne" 
+							class="uk-input"
+							type="text"
+							placeholder="CNE"
+                            required
+						/>
+					</div>
+					<div class="uk-margin-small uk-inline uk-width-larg">
+						<span class="uk-form-icon" uk-icon="icon: lock"></span>
+						<input  
+                            id="password" 
+                            name="password" 
+							class="uk-input"
+							type="password"
+							placeholder="password"
+                            required
+						/>
+					</div>
+					<div class="uk-margin-small uk-inline uk-width-larg">
+						<span class="uk-form-icon" uk-icon="icon: lock"></span>
+						<input 
+                            id="passwordRepet" 
+                            name="passwordRepet" 
+							class="uk-input"
+							type="password"
+							placeholder="Repeat password"
+                            required
+						/>
+					</div>
+					<div class="uk-margin-small">
+						<input class="uk-input" type="submit" value="connect" />
+					</div>
+				</fieldset>
+			</form>
+		</div>
+
+
+    
     
     <script src="./javascripts/admin.js"></script>
     <script src="./javascripts/addUser.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.8/dist/js/uikit.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/uikit@3.5.8/dist/js/uikit-icons.min.js"></script>
 </body>
 </html>
