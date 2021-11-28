@@ -1,6 +1,7 @@
 const body = document.querySelector("body")
-// const booksTableBody = document.querySelector(".bookList table tbody")
-const booksList = document.querySelector(".bookList ul");
+
+const booksList = document.querySelector(".card-container > div")
+
 
 const imagesPath = "Upload/BookCovers/";
 
@@ -10,35 +11,56 @@ async function showAllBooks()
     const books = await rawResponse.json();
 
     books.forEach(book => {
-        let containerA = document.createElement("a")
-        containerA.classList.add("flex-container")
+        let col = document.createElement("div");
+        col.classList.add("col")
 
-        let img = document.createElement("img")
-        img.title = book.title;
-        img.alt = book.title
+        booksList.appendChild(col);
+
+        booksList.appendChild(col)
+        console.log(col)
+
+        let card = document.createElement("div");
+        card.classList.add("card", "h-100")
+
+        col.appendChild(card)
+        
+
+        let imageContainer = document.createElement("div");
+        imageContainer.classList.add("img-container")
+
+
+
+        let image = document.createElement("img");
+        image.classList.add("card-img-top")
+        imageContainer.appendChild(image)
+
+        image.title = book.title;
+        image.alt = book.title;
         if (book.image)
-            img.src = imagesPath + book.image;
+            image.src = imagesPath + book.image;
+
+        card.appendChild(imageContainer)
+
+
+        let cardBody = document.createElement("div");
+        cardBody.classList.add("card-body")
+
+        card.appendChild(cardBody)
+
+        let bookTitle = document.createElement("h5");
+        bookTitle.textContent = book.title;
+        bookTitle.classList.add("card-title")
+
+        let bookStock = document.createElement("p")
+        bookStock.textContent = `Stock : ${book.qteStock} / ${book.total}`
+        console.log(typeof book.qteStock)
+        console.log(typeof 0)
+        if (book.qteStock === 0)
+            bookStock.classList.add("outOfStock")
         
-        let rightDiv = document.createElement("div")
-        rightDiv.classList.add("image-parent")
-        rightDiv.appendChild(img)
-        
+        cardBody.appendChild(bookTitle)
+        cardBody.appendChild(bookStock)
 
-        let leftDiv = document.createElement("div")    
-        leftDiv.classList.add("flex-column")
-        leftDiv.textContent = book.title
-
-        let span = document.createElement("span")
-        span.classList.add("badge")
-        span.textContent = `${book.qteStock} Copies en Stock`
-        if(book.qteStock == 0)
-            span.classList.add("danger")
-        leftDiv.appendChild(span)
-
-        containerA.append(leftDiv);
-        containerA.append(rightDiv);
-
-        booksList.appendChild(containerA);
     });
 }
 

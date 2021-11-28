@@ -13,7 +13,7 @@ router.get('/', (req, res) =>{
   let isLoggedIn = controllers.isLoggedIn(req)
   if (!isLoggedIn)
   {
-    return controllers.sendFile(res, "login.html");
+    return controllers.sendFile(res, "index.html");
   }
   if (req.user.role == "student")
     res.redirect("/student")

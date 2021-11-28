@@ -4,7 +4,7 @@ const controllers = require("../controllers/auth")
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  
+  return controllers.sendFile(res, "index.html")
 });
 
 router.get('/reg', function(req, res, next) {
@@ -28,6 +28,11 @@ router.get('/admin', controllers.requireAuth ,(req, res)=>{
 router.get('/browse', controllers.requireAuth, async (req, res) => {
   return controllers.sendFile(res, "browse.html");
 })
+
+router.get('/browseStudent', controllers.requireAuth, async (req, res) => {
+  return controllers.sendFile(res, "browseStudent.html");
+})
+
 
 router.get('/logout', controllers.requireAuth ,(req, res)=>{
   return controllers.logout(res)

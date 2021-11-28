@@ -1,4 +1,4 @@
-const usernameText = document.querySelector('#username')
+const usernameText = document.querySelector('#username-nav')
 
 
 async function getUserInfo()
