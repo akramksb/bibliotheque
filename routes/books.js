@@ -7,11 +7,14 @@ const controllers = require('../controllers/auth')
 require('dotenv').config()
 
 /* GET users listing. */
-
-router.get('/', controllers.requireAuth, async (req, res) => {
+router.get('/', async (req, res) => {
   let booklist = await book.findAll();
   return res.json(booklist);
 })
+// router.get('/', controllers.requireAuth, async (req, res) => {
+//   let booklist = await book.findAll();
+//   return res.json(booklist);
+// })
 
 
 module.exports = router;

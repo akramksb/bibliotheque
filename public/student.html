@@ -5,29 +5,60 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./stylesheets/student.css">
+    <link rel="stylesheet" href="./stylesheets/index.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.8/dist/css/uikit.min.css"/>
+    <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+    crossorigin="anonymous"
+    />
     <title>Document</title>
 </head>
 <body>
-    <div class="nav-bar">
-        <ul class="menu nav-list">
-            <li><a href="">Browse</a></li>
-            <li><a href="">My books</a></li>
-            
-        </ul>
-        <ul class="profile-info nav-list">
-            <li><a href="/logout">Logout</a></li>
-            <li><a href="" id="username"></a></li>
-            
-        </ul>
-        <div class="clear"></div>
-    </div>
+    <div class="uk-background-cover" uk-height-viewport>
+        <img src="./images/img-student-space.jpg" alt="" uk-cover />
+    <div class="uk-position-top">
+        <nav class="navbarTransparent" uk-navbar>
+          <div class="uk-navbar-center">
+            <ul class="uk-navbar-nav navText">
+              <li class="nav-item">
+                <a class="uk-text-emphasis navText uk-text-bold" href="#"
+                  >Browse</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="uk-text-emphasis navText uk-text-bold" href="#"
+                  >My books</a
+                >
+              </li>
+            </ul>
+        </div>  
+        <div class="uk-navbar-right">
+            <ul class="profile-info uk-navbar-nav navText">
+                <li class="nav-item">
+                    <a class="uk-text-emphasis navText uk-text-bold" href="/logout">Logout</a>
+                </li>
+                <li class="nav-item">
+                    <a class="uk-text-emphasis navText uk-text-bold" href="" id="username"></a>
+                </li>
+            </ul>
+        </div>
+        </nav>
+      </div>
+
+      
+         
     
     <div class="container">
         <div class="card">
-            <h2>Welcome to library</h2>
+            <h2 style="color:black;">Welcome to library</h2>
         </div>
     </div>
     
+</div>
     <script src="./javascripts/student.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.8/dist/js/uikit.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/uikit@3.5.8/dist/js/uikit-icons.min.js"></script>
 </body>
 </html>

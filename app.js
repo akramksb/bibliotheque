@@ -18,7 +18,7 @@ app.use(cookieParser());
 
 //static files
 // app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static('./public', {index: 'login.html'}));
+app.use(express.static('./public', {index: 'index.html'}));
 app.use('/Upload', express.static('./Upload'))
 
 

@@ -4,7 +4,7 @@ const controllers = require("../controllers/auth")
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  
+  return controllers.sendFile(res, "index.html");
 });
 
 router.get('/reg', function(req, res, next) {

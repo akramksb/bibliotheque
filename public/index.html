@@ -1,50 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="./stylesheets/login.css" rel="stylesheet">
-    <link href="./stylesheets/main.css" rel="stylesheet">
-    <title>Login</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home</title>
+  <link rel="stylesheet" href="./stylesheets/index.css" />
+  <link rel="stylesheet" href="./stylesheets/login page.css" />
+    <link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/uikit@3.5.8/dist/css/uikit.min.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+			integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+			crossorigin="anonymous"
+		/>
+    <title>N7Library</title>
 </head>
 <body>
-    <div class="navbar">
-        <ul>
-            <li>Nav</li>
-            <li>Menu</li>
-        </ul>
-        <div class="login">
-            <div class="sign-up-text">Sign-up</div>
-             | 
-            <div class="login-text">Login</div>
-        </div>
+  <div class="uk-position-relative">
+    <div
+      class="uk-position-relative uk-visible-toggle uk-light uk-position-top"
+      tabindex="-1"
+      uk-slideshow="animation: push"
+      autoplay="true"
+    >
+      <ul class="uk-slideshow-items" uk-height-viewport="min-height: 100vh">
+        <li>
+          <div
+            class="uk-position-cover uk-animation-kenburns uk-animation-reverse uk-transform-origin-center-left"
+          >
+            <img src="./images/img1.jpg" alt="" uk-cover />
+          </div>
+        </li>
+        <li>
+          <div
+            class="uk-position-cover uk-animation-kenburns uk-animation-reverse uk-transform-origin-top-right"
+          >
+            <img src="./images/img2.jpg" alt="" uk-cover />
+          </div>
+        </li>
+        <li>
+          <div
+            class="uk-position-cover uk-animation-kenburns uk-animation-reverse uk-transform-origin-bottom-left"
+          >
+            <img src="./images/img3.jpg" alt="" uk-cover />
+          </div>
+        </li>
+      </ul>
     </div>
-    <div class="login-container">
-        <div class="login-wrapper">
-            <div class="login-title">
-                <h2>login</h2>
+    <div class="uk-position-top">
+      <nav class="navbarTransparent" uk-navbar>
+        <div class="uk-navbar-right">
+          <ul class="uk-navbar-nav navText">
+            <li class="nav-item">
+              <a class="uk-text-emphasis navText uk-text-bold" href="#"
+                >Books</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="uk-text-emphasis navText uk-text-bold" href="#"
+                >About US</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="" class="navText"
+                ><button
+                  id="btnSignIn"
+                  class="uk-button uk-button-default"
+                  uk-toggle="target: #form"
+                >
+                  SIGNIN
+                </button></a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  
+  <div id="form" class="uk-modal-full" uk-modal>
+    <div class="uk-modal-dialog">
+      <button
+        class="uk-modal-close-full uk-close-large"
+        type="button"
+        uk-close
+      ></button>
+      <div
+        class="uk-grid-collapse uk-child-width-1-2@s uk-flex-middle"
+        uk-grid
+      >
+        <div
+          class="uk-background-cover"
+          uk-height-viewport
+        >
+          <img src="./images/img-sign-in.jpg" alt="" uk-cover />
+        </div>
+        <div class="uk-padding-large">
+          <h1 class="uk-position-top-center">Sign in</h1>
+          <div
+          class="uk-grid-width-larg-1-1 signinBack uk-grid-width-small-2-3 uk-padding uk-position-center uk-margin-remove-left"
+          uk-grid
+        >
+          <form  action="/login" method="POST" class="uk-padding-remove-left">
+            <fieldset class="uk-fieldset">
+              <legend class="uk-legend">SIGN IN</legend>
+              <div class="username cne text-input">
+                <label for="cne"> CNE </label>
+                <input id="cne" name="cne" required>
             </div>
-            <form class="login-form">
-                <div class="username text-input">
-                    <label for="username"> nom d'utilisateur </label>
-                    <input id="username" name="username" placeholder="nom d'utilisateur" required>
-                </div>
-                <div class="password text-input">
-                    <label for="password"> mot de passe </label>
-                    <input id="password" type="password" name="password" placeholder="mot de passe" required>
-                </div>
-    
-                <div class="login-buttons">
-                    <button type="submit" class= "login">Login</button>
-                    <button class= "sign-up">Sign-up</button>
-                    <button class= "cancel-login">Cancel</button>
-                </div>
-            </form>
-        </div>
+            <div class="password text-input">
+                <label for="password"> Mot de passe </label>
+                <input id="password" type="password" name="password" required>
+                <div class="error-login"></div>
+            </div>
 
+
+            <div class="role-select">
+                <!-- <p> Se connecter en tant que </p> -->
+                <input id="student" value="student" type="radio" name="role" required checked>
+                <label for="student">Etudiant</label>
+                <input id="admin" value="admin" type="radio" name="role" required>
+                <label for="admin">Admin</label>
+            </div>
+            <!--<button type="submit" class= "login-btn">Login</button>-->
+            <div class="uk-margin-small">
+              <input class="uk-input" type="submit" value="connect" />
+            </div>
+            </fieldset>
+          </form>
+          </div>
+        </div>
+      </div>
     </div>
-    
-    <script src="./javascripts/login2.js"></script>
+  </div>
+
+  <footer class="mainfooter" role="contentinfo">
+    <div class="footer-middle">
+      <div class="container">
+        <div class="row">
+          <div class="row mb-4 ">
+            <div class="col-md-4 col-sm-11 col-xs-11">
+                <div class="footer-text pull-left">
+                    <div class="d-flex">
+                        <h1 class="font-weight-bold mr-2 px-3" style="color:#16151a; background-color:#957bda">N7</h1>
+                        <h1 style="color: #957bda">Lib</h1>
+                    </div>
+                    <p class="card-text">That website is created by students from ENSETM.</p>
+                </div>
+            </div>
+          </div>
+            <div class="row mb-6 ">
+            <div class="col-md-2 col-sm-4 col-xs-4">
+                <h5 class="heading">ENSET</h5>
+                <ul class="card-text">
+                    <li>About Us</li>
+                    <li>Contact</li>
+               </ul>
+           </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+    <script src="./javascripts/login.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.8/dist/js/uikit.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/uikit@3.5.8/dist/js/uikit-icons.min.js"></script>
 </body>
 </html>

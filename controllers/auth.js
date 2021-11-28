@@ -47,7 +47,7 @@ function sendFile(res, pageName)
 function logout(res)
 {
     res.clearCookie("jwt");
-    res.redirect('/login')
+    res.redirect('/')
 }
 
 module.exports = {
