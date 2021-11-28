@@ -5,76 +5,110 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./stylesheets/addBook.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.8/dist/css/uikit.min.css"/>
+    <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+    crossorigin="anonymous"
+    />
     <title>Document</title>
 </head>
 <body>
-    <div class="nav-bar">
-        <ul class="menu nav-list">
-            <li><a href="">Browse</a></li>
-            <li><a href="/addBook">Add book</a></li>
-            <li><a href="/addUser">Add User</a></li>
-            
-        </ul>
-        <ul class="profile-info nav-list">
-            <li><a href="/logout">Logout</a></li>
-            <li><a href="" id="username-nav"></a></li>
-            
-        </ul>
-        <div class="clear"></div>
+    <div class="uk-background-cover" uk-height-viewport>
+        <img src="../upload/images/img-student-space.jpg" alt="" uk-cover />
+    <div class="uk-position-top">
+        <nav class="navbarTransparent" uk-navbar>
+          <div class="uk-navbar-center">
+            <ul class="uk-navbar-nav navText">
+              <li class="nav-item">
+                <a class="uk-text-emphasis navText uk-text-bold" href="/browse"
+                  >Browse</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="uk-text-emphasis navText uk-text-bold" href="/addBook">Add book</a>
+              </li>
+              <li class="nav-item">
+                <a class="uk-text-emphasis navText uk-text-bold" href="/addUser">Add User</a>
+              </li>
+            </ul>
+        </div>  
+        <div class="uk-navbar-right">
+            <ul class="profile-info uk-navbar-nav navText">
+                <li class="nav-item">
+                    <a class="uk-text-emphasis navText uk-text-bold" href="/logout">Logout</a>
+                </li>
+                <li class="nav-item">
+                    <a class="uk-text-emphasis navText uk-text-bold" href="" id="username-nav"></a>
+                </li>
+            </ul>
+        </div>
+        </nav>
     </div>
     
-    <div class="addBook-wrapper">
-        <div class="addBook-title">
-            <h2>Ajouter un livre</h2>
-        </div>
-        <div class="addBook-form">
-            <form action="/addBook" method="POST">
-                
-                <div class="flex-container">
-
-                    <div class="image-select">
-                        <div class="to-hide">
-                            <h4 class="image-placeholder-text">ajouter une image</h4>
-                            <div class="rectangle rec-1 "></div>
-                            <div class="rectangle rec-2 "></div>
-                        </div>
-                        <div class="to-show flex-smallbtn-container">
-                            <button type="button" class="reselect-img green">reselect</button>
-                            <button type="button" class="remove-img" >remove</button>
-                        </div>
-                        <!-- <img alt="your image" class="preview-upload"> -->
-                        <input type="file" accept="image/*">
-                    </div>
-
-                    <div class="inputs-group">
-                        <div class="isbn text-input">
-                            <label for="isbn"> ISBN </label>
-                            <input id="isbn" name="isbn" required>
-                        </div>
-
-                        <div class="quantite text-input">
-                            <label for="quantite"> Quantite </label>
-                            <input id="quantite" type="number" min=0 name="quantite" required>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="titre text-input">
-                    <label for="titre"> Titre </label>
-                    <input id="titre" name="titre" required>
-
-                    <div class="error-addBook error-cne"></div>
-                </div>
-                
-
-                <button type="submit" class= "addBook-btn">Add Book</button>
-
-
-            </form>
-        </div>
     </div>
+    
+
+
+<div class="uk-grid-width-larg-1-1 signinBack uk-grid-width-small-2-3 uk-padding uk-position-center uk-margin-remove-left" uk-grid style="background-color: rgba(255, 255, 255, 0.842);margin:auto;width:30%;">
+    <form action="/addUser" method="POST"  class="uk-padding-remove-left">
+        <fieldset class="uk-fieldset">
+            <legend class="uk-legend">Add book</legend>
+            <div class="flex-container">
+
+                <div class="image-select">
+                    <div class="to-hide">
+                        <h4 class="image-placeholder-text">Add image</h4>
+                        <div class="rectangle rec-1 "></div>
+                        <div class="rectangle rec-2 "></div>
+                    </div>
+                    <div class="to-show flex-smallbtn-container">
+                        <button type="button" class="reselect-img green">reselect</button>
+                        <button type="button" class="remove-img" >remove</button>
+                    </div>
+                    <input type="file" accept="image/*">
+                </div>
+
+                <div class="inputs-group">
+                    <div class="isbn text-input">
+                        <input 
+                        id="isbn"
+                        name="isbn" 
+                        placeholder="ISBN"
+                        required>
+                    </div>
+
+                    <div class="quantite text-input">
+                        <input 
+                        id="quantite" 
+                        type="number" 
+                        min=0 
+                        name="quantite" 
+                        placeholder="Quantity"
+                        required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="titre text-input">
+                <input 
+                id="titre" 
+                name="titre" 
+                placeholder="Titre"
+                required>
+
+                <div class="error-addBook error-cne"></div>
+            </div>
+            
+        </fieldset>
+    </form>
+</div>
+
     
     <script src="./javascripts/admin.js"></script>
     <script src="./javascripts/addBook.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.8/dist/js/uikit.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/uikit@3.5.8/dist/js/uikit-icons.min.js"></script>
 </body>
 </html>
