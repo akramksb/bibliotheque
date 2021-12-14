@@ -15,16 +15,6 @@ body{
     left: 50%;
     transform: translate(-50%,-50%);
 }
-/* img
-{
-    width: 50px;
-    margin-bottom: 26px;
-    display: block;
-    margin: auto;
-    width: 45px;
-    margin-bottom: 40px;
-    margin-top: 90px;
-} */
 .login-form
 {
     border: 1px solid #787A91;

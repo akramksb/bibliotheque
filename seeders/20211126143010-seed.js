@@ -70,8 +70,8 @@ module.exports = {
         updatedAt: new Date()
       });
 
-    //  await queryInterface.bulkInsert('admins', admin, {});
-    //  await queryInterface.bulkInsert('etudiants', student, {});
+     await queryInterface.bulkInsert('admins', admin, {});
+     await queryInterface.bulkInsert('etudiants', student, {});
      await queryInterface.bulkInsert('books', books, {});
 
   
